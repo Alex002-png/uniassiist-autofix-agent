@@ -35,7 +35,7 @@ async function getUpdates() {
       params: {
         offset: lastUpdateId + 1,
         timeout: 10,
-        allowed_updates: ['callback_query', 'message'],
+        allowed_updates: JSON.stringify(['callback_query', 'message']),
       },
       timeout: 15000,
     });
