@@ -5,6 +5,7 @@ const vercel = require('./vercel');
 const PROJECTS = [
   { id: 'psyassist-saas', name: 'PsyAssist', app: 'psyassist', url: 'https://psyassist.uniassiist.com/api/health' },
   { id: 'medassist-saas',  name: 'MedAssist',  app: 'medassist',  url: 'https://medassist.uniassiist.com/api/health' },
+  { id: 'uniassiist',      name: 'Landing',    app: 'landing',    url: 'https://uniassiist.com' },
 ];
 
 async function checkHealth(url) {
