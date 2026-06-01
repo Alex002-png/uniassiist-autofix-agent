@@ -4,7 +4,7 @@ const cron = require('node-cron');
 const { run: runSentinel }       = require('./agents/sentinel');
 const { applyFix, redeployApp }  = require('./agents/deployer');
 const { verifyDeploy }           = require('./agents/verifier');
-const { sendMessage, answerCallback, getUpdates } = require('./agents/telegram');
+const { sendMessage, answerCallback, getUpdates, setMyCommands } = require('./agents/telegram');
 const { scanSecurity }           = require('./agents/security');
 const { sendDailyReport }        = require('./agents/reporter');
 const { handleCommand }          = require('./agents/commander');
@@ -93,6 +93,7 @@ async function pollTelegram() {
 }
 
 // ── Inicio ───────────────────────────────────────────────────────────────────
+setMyCommands();        // Registrar menú de comandos en Telegram
 pollTelegram();
 runSentinel();          // Primera revisión al arrancar
 checkSSL();             // Verificar SSL al arrancar

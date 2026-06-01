@@ -49,4 +49,20 @@ async function getUpdates() {
   }
 }
 
-module.exports = { sendMessage, answerCallback, getUpdates };
+async function setMyCommands() {
+  const commands = [
+    { command: 'status',             description: '📡 Ver estado de las 3 apps' },
+    { command: 'reporte',            description: '📊 Generar reporte ahora mismo' },
+    { command: 'redeploy_psyassist', description: '🔄 Redeploy PsyAssist' },
+    { command: 'redeploy_medassist', description: '🔄 Redeploy MedAssist' },
+    { command: 'ayuda',              description: '🤖 Ver todos los comandos' },
+  ];
+  try {
+    await axios.post(`${BASE()}/setMyCommands`, { commands });
+    console.log('[Telegram] Comandos registrados en el menú de Telegram');
+  } catch (err) {
+    console.error('[Telegram] Error registrando comandos:', err.response?.data || err.message);
+  }
+}
+
+module.exports = { sendMessage, answerCallback, getUpdates, setMyCommands };

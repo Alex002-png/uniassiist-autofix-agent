@@ -29,6 +29,12 @@ async function handleCommand(text) {
     case '/redeploy':
       return cmdRedeploy(arg);
 
+    case '/redeploy_psyassist':
+      return cmdRedeploy('psyassist');
+
+    case '/redeploy_medassist':
+      return cmdRedeploy('medassist');
+
     case '/reporte':
     case '/report':
       const { sendDailyReport } = require('./reporter');
