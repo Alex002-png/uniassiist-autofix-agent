@@ -92,22 +92,22 @@ Sistema de 6 workflows que operan la SaaS de forma autónoma:
 ### Analytics Semanal
 Cada lunes a las 9am Lima — consulta Supabase y health de PsyAssist en paralelo, envía reporte consolidado a Telegram.
 
-![Analytics Semanal](./screenshots/analytics-semanal.png)
+![Analytics Semanal](ANALYTICS SEMANAL.jpeg)
 
 ### UniAssiist Monitor
 Cada 5 minutos — chequea PsyAssist Health, MedAssist Health y Vercel Deployments en paralelo. Si detecta issues envía alerta a Telegram, si todo OK registra silenciosamente.
 
-![UniAssiist Monitor](./screenshots/monitor.png)
+![UniAssiist Monitor](ESTADO DE AGENTES.jpeg)
 
 ### Apply Fix (Redeploy Remoto)
 Trigger por botones inline de Telegram — parsea el callback, decide la acción (PsyAssist / MedAssist / Dismiss), obtiene el último deploy de Vercel y ejecuta redeploy. Todo desde el celular sin abrir ningún dashboard.
 
-![Apply Fix](./screenshots/apply-fix.png)
+![Apply Fix](APPLY FIX.jpeg)
 
 ### Onboarding Días 1-3-7
 Webhook POST al registrar usuario — envía emails transaccionales en los días 1, 3 y 7 automáticamente con nodos Wait entre cada envío.
 
-![Onboarding](./screenshots/onboarding.png)
+![Onboarding](Onboarding dias 1-3-7.jpeg)
 
 ---
 
@@ -121,7 +121,7 @@ Panel completo con métricas en tiempo real:
 - Token usage por usuario con barra de progreso
 - Filtros por plan, carrera, estado y fecha
 
-![Panel Admin](./screenshots/admin-panel.png)
+![Panel Admin](USUARIOS.jpeg)
 
 ---
 
@@ -129,7 +129,7 @@ Panel completo con métricas en tiempo real:
 
 El sistema es controlable desde el celular en tiempo real:
 
-![Comandos Telegram](./screenshots/telegram-commands.png)
+![Comandos Telegram](COMANDOS TELEGRAM.jpeg)
 
 ```
 /status   — Ver estado de todos los agentes
